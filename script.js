@@ -161,5 +161,28 @@ function showMessage() {
     `,
     icon: "success",
     confirmButtonText: "Thank You ❤️"
-  });
-}
+  }).then(() => {
+  var duration = 4000;
+  var end = Date.now() + duration;
+
+  (function frame() {
+    confetti({
+      particleCount: 6,
+      angle: 60,
+      spread: 70,
+      origin: { x: 0 }
+    });
+
+    confetti({
+      particleCount: 6,
+      angle: 120,
+      spread: 70,
+      origin: { x: 1 }
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+});
+
