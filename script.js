@@ -150,4 +150,16 @@ document.addEventListener('DOMContentLoaded', function() {
         animate();
     }
 });
-
+function showMessage() {
+  Swal.fire({
+    title: "Happy Birthday Kenii! 🤍",
+    html: `
+      <p style="font-size:18px">
+      No matter what happens, you'll always have a brother in me.<br><br>
+      Stay happy, keep smiling, and thank you for being such an amazing person. 🌸🤍
+      </p>
+    `,
+    icon: "success",
+    confirmButtonText: "Thank You ❤️"
+  });
+}
