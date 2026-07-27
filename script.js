@@ -191,3 +191,6 @@ function showMessage() {
 
   });
 }
+window.addEventListener("load", () => {
+    setTimeout(showMessage, 1000);
+});
