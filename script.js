@@ -156,54 +156,38 @@ function showMessage() {
     html: `
       <div style="font-size:18px; line-height:1.8;">
         I don't know what the future holds...<br><br>
-
         But one thing will never change —<br>
         You'll always be my favourite sister. 🤍<br><br>
-
         Thank you for every smile, every memory, and every moment we shared.<br><br>
-
         Stay happy, stay healthy, and never stop being yourself.<br><br>
-
         Happy Birthday once again... ❤️🎂<br><br>
-
         <b>— Your Brother 🫂</b>
       </div>
     `,
     confirmButtonText: "Thank You ❤️"
+  }).then(() => {
+
+    const end = Date.now() + 4000;
+
+    (function frame() {
+      confetti({
+        particleCount: 6,
+        angle: 60,
+        spread: 70,
+        origin: { x: 0 }
+      });
+
+      confetti({
+        particleCount: 6,
+        angle: 120,
+        spread: 70,
+        origin: { x: 1 }
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    })();
+
   });
 }
-    title: "Happy Birthday Kenii! 🤍",
-    html: `
-      <p style="font-size:18px">
-      No matter what happens, you'll always have a brother in me.<br><br>
-      Stay happy, keep smiling, and thank you for being such an amazing person. 🌸🤍
-      </p>
-    `,
-    icon: "success",
-    confirmButtonText: "Thank You ❤️"
-  }).then(() => {
-  var duration = 4000;
-  var end = Date.now() + duration;
-
-  (function frame() {
-    confetti({
-      particleCount: 6,
-      angle: 60,
-      spread: 70,
-      origin: { x: 0 }
-    });
-
-    confetti({
-      particleCount: 6,
-      angle: 120,
-      spread: 70,
-      origin: { x: 1 }
-    });
-
-    if (Date.now() < end) {
-      requestAnimationFrame(frame);
-    }
-  })();
-});
-} 
-
