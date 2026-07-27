@@ -152,6 +152,26 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 function showMessage() {
   Swal.fire({
+    title: "Happy Birthday, Kenii! 🤍",
+    html: `
+      <div style="font-size:18px; line-height:1.8;">
+        I don't know what the future holds...<br><br>
+
+        But one thing will never change —<br>
+        You'll always be my favourite sister. 🤍<br><br>
+
+        Thank you for every smile, every memory, and every moment we shared.<br><br>
+
+        Stay happy, stay healthy, and never stop being yourself.<br><br>
+
+        Happy Birthday once again... ❤️🎂<br><br>
+
+        <b>— Your Brother 🫂</b>
+      </div>
+    `,
+    confirmButtonText: "Thank You ❤️"
+  });
+}
     title: "Happy Birthday Kenii! 🤍",
     html: `
       <p style="font-size:18px">
