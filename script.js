@@ -151,6 +151,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 function showMessage() {
+if (typeof Swal === "undefined") {
+    alert("Happy Birthday, Kenii! 🤍");
+    return;
+}
+
   Swal.fire({
     title: "Happy Birthday, Kenii! 🤍",
     html: `
@@ -192,5 +197,28 @@ function showMessage() {
   });
 }
 window.addEventListener("load", () => {
-    setTimeout(showMessage, 1000);
+    Swal.fire({
+        title: "🎁 Surprise Time!",
+        text: "Tu surprise mate tayar che? 😺🤍",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonText: "Yes 😍",
+        cancelButtonText: "No 🙈",
+        allowOutsideClick: false
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+            showMessage();
+        } else {
+            Swal.fire({
+                title: "😂 No Option!",
+                text: "No dabavi ne pan surprise jovu j padse 😆🤍",
+                icon: "info",
+                confirmButtonText: "Okay ❤️"
+            }).then(() => {
+                showMessage();
+            });
+        }
+
+    });
 });
