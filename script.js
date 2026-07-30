@@ -172,6 +172,8 @@ if (typeof Swal === "undefined") {
     confirmButtonText: "Thank You ❤️"
   }).then(() => {
 
+    showGiftBox(); // 
+
     const end = Date.now() + 4000;
 
     (function frame() {
