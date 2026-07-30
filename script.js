@@ -200,52 +200,55 @@ music.play().catch(() => {});
 
   });
 }
-window.addEventListener("load", () => {
-    Swal.fire({
-        title: "🎁 Surprise Time!",
-        text: "Tu surprise mate tayar che? 😺🤍",
-        icon: "question",
-        showCancelButton: true,
-        confirmButtonText: "Yes 😍",
-        cancelButtonText: "No 🙈",
-        allowOutsideClick: false
-    }).then((result) => {
+function checkPassword() {
+    const pass = document.getElementById("passwordInput").value;
 
-        if (result.isConfirmed) {
-            showMessage();
-        } else {
+    if (pass === "070907") {
+
+        document.getElementById("passwordScreen").style.display = "none";
+
+        Swal.fire({
+            icon: "success",
+            title: "Welcome Kenii 🤍",
+            text: "Surprise unlock thai gayu! 🎉",
+            timer: 1500,
+            showConfirmButton: false
+        }).then(() => {
+
             Swal.fire({
-                title: "😂 No Option!",
-                text: "No dabavi ne pan surprise jovu j padse 😆🤍",
-                icon: "info",
-                confirmButtonText: "Okay ❤️"
-            }).then(() => {
-                showMessage();
+                title: "🎁 Surprise Time!",
+                text: "Tu surprise mate tayar che? 😺🤍",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonText: "Yes 😍",
+                cancelButtonText: "No 🙈",
+                allowOutsideClick: false
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+                    showMessage();
+                } else {
+                    Swal.fire({
+                        title: "😂 No Option!",
+                        text: "No dabavi ne pan surprise jovu j padse 😆🤍",
+                        icon: "info",
+                        confirmButtonText: "Okay ❤️"
+                    }).then(() => {
+                        showMessage();
+                    });
+                }
+
             });
-        }
 
-    });
-});
-// 🎁 Gift Box Feature
-function openGift() {
-    Swal.fire({
-        title: "🎉 Surpriseeee!!",
-        html: `
-        <h2>Happy Birthday Kenii 🤍</h2>
-        <p>You deserve all the happiness in the world. 🫂</p>
-        <p>Stay happy forever! ❤️</p>
-        `,
-        confirmButtonText: "Aww 🥹"
-    });
+        });
 
-    confetti({
-        particleCount: 300,
-        spread: 180,
-        origin: { y: 0.6 }
-    });
-}
+    } else {
 
-// Show gift after surprise message
-function showGiftBox() {
-    document.getElementById("giftBox").style.display = "block";
+        Swal.fire({
+            icon: "error",
+            title: "Wrong Password 😅",
+            text: "Hint: 6 digit birthday password 🤍"
+        });
+
+    }
 }
