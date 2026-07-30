@@ -171,6 +171,8 @@ if (typeof Swal === "undefined") {
     `,
     confirmButtonText: "Thank You ❤️"
   }).then(() => {
+const music = document.getElementById("bgMusic");
+music.play().catch(() => {});
 
     showGiftBox(); // 
 
