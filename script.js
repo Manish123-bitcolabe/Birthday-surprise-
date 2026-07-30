@@ -252,3 +252,26 @@ function checkPassword() {
 
     }
 }
+// 🎁 Show Gift Box
+function showGiftBox() {
+    document.getElementById("giftBox").style.display = "block";
+}
+
+// 🎁 Open Gift
+function openGift() {
+    Swal.fire({
+        title: "🎉 Surpriseeee!!",
+        html: `
+            <h2>Happy Birthday Kenii 🤍</h2>
+            <p>You deserve all the happiness in the world. 🫂</p>
+            <p>Stay happy forever! ❤️</p>
+        `,
+        confirmButtonText: "Aww 🥹"
+    });
+
+    confetti({
+        particleCount: 300,
+        spread: 180,
+        origin: { y: 0.6 }
+    });
+}
